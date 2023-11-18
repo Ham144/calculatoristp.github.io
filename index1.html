@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Calculator</title>
+</head>
+    <body>
+    <h1>Simple Calculator</h1>
+    <form>
+        <input type="text" id="number1" placeholder="Number 1">
+        <input type="text" id="number2" placeholder="Number 2">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+        <input type="button" id="calculate" value="Calculate">
+        <p id="result">eee</p>
+    </form>
+<script>
+    function calculate() {
+    var number1 = document.getElementById("number1").value;
+    var number2 = document.getElementById("number2").value;
+    var operator = document.getElementById("operator").value;
+    var result = eval(number1 + operator + number2);
+    document.getElementById("result").innerHTML = result;
+}
+</script>
+</body>
+</html>
