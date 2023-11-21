@@ -6,6 +6,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinjam Seratus</title>
+    <style>
+        #snippetForm{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20opx;
+        }
+        #searchForm{
+            display: flex;
+            align-self: center;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            
+        }
+        body{
+            text-align: center;
+        }
+        #jawaban{
+          text-align: left;
+          align-items: center;
+          margin-left: 5%;
+          margin-right: 5%;
+          
+        }
+        .highlight {
+          visibility: block;
+          background-color: yellow;
+          
+          
+        }
+        
+        
+        body{
+
+          background-attachment: fixed;
+        }
+        
+        
+    </style>
+    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,5 +87,195 @@
       </nav>
 
       <H1>Sedang Dibuat </H1>
+
+        <form id="snippetForm">
+            <label for="input">Masukkan teks untuk disimpan</label>
+            <input type="text" id="input" name="input">
+            <button type="submit">Simpan</button>
+        </form>
+        
+        <input type="text" id="searchInput">
+        <button id="searchButton">Cari</button>
+        <div id="jawaban">
+          
+          <h3 id="info"></h3>
+        <p id="longText" style="display: none"> 
+          Tanah terdiri dari butiran-butiran material hasil pelapukan massa batuan massive, dimana 
+          ukuran butirannya bisa sebesar bongkahan, berangkal, kerikil, pasri, lanau, lempung, dan kontak 
+          butirnya tidak tersementasi termasuk bahan organik menurut Terzaghi. Menurut USCS ukuran 
+          tekstur tanah seperti di bawah ini:
+          1. Kerikil (gravel): yaitu partikel tanah berbutir kasar yang berukuran 4,76 (No. 4) 
+          sampai 75 mm (No. 3).
+          2. Pasir (sand): yaitu partikel tanah berbutir kasar yang berukuran 0,074 (No. 200) 
+          sampai 4,76 mm (No. 4). Berkisar dari kasar (3 sampai 5 mm) sampai halus (< 1 
+          mm).
+          3. Lanau (silt) dan Lempung (clay): yaitu tanah berbutir halus yang berukuran lebih 
+          kecil dari 0,074 mm (No. 200). Lanau dan lempung dalam jumlah besar ditemukan 
+          dalam deposit yang disedimentasikan ke dalam danau atau dekat garis pantai pada 
+          muara sungai. Deposit terjadi bila angin mengangkut partikel-partikel lanau ke suatu 
+          lokasi. Angkutan oleh angin ini membatasi ukuran partikel sedemikian rupa sehingga 
+          deposit yang dihasilkan mempunyai ukuran butir yang hampir sama.
+          4. Koloid (colloids): yaitu partikel mineral yang ”diam”, berukuran lebih kecil dari 
+          0,001 mm.
+          1.2 Medan kerja dan sifat fisik material.
+          Penggunaan alat-alat besar tidak dapat dipisahkan dari kondisi medan kerja dan sifat phisik
+          material, karena kedua keadaan tersebut akan banyak menentukan segi teknis jenis alat apa yang 
+          paling tepat digunakan. 
+          Sifat phisik material ini berpengaruh besar terhadap operasi peralatan alat-alat besar, terutama
+          dalam:
+          • Menentukan jenis alat yang akan digunakan dan taksiran kapasitas produksinya.
+          • Perhitungan volume pekerjaan.
+          • Kemampuan kerja alat pada kondisi medan kerja atau kondisi material yang ada.
+          Beberapa sifat phisik material yang penting untuk diperhatikan dalam hubungnya dengan alat-alat 
+          besar adalah:
+          1. Pengembangan dan penyusutan material (swell factor).
+          2. Berat material.
+          3. Bentuk material.
+          4. Kohesivitas material
+          5. Kekerasan material.
+          6. Daya dukung material
+          7. Jarak angkut.
+          1.3. Pengembangan dan Penyusutan material
+          Yang dimaksud dengan pengembangan dan penyusutan material adalah perubahan
+          (penambahan atau pengurangan) volume material, apabila material tersebut berubah dari bentuk 
+          aslinya digali, dipindahkan, diangkut atau dipadatkan. 
+          Perubahan volume tersebut akan diikuti pula dengan perubahan dari density material, factor
+          pengembangan dan penyusutan volume sama dengan factor perubahan density material dalam
+          kondisi yang sama.
+          Berdasarkan adanya perubahan tersebut pengukuran volume maupun desity material
+          dibedakan atas:
+          a. Keadaan asli (baik, insitu)
+          Yaitu keadaan material yang masih alam dan belum mengalami gangguan (lalu-la lang
+          peralatan, digali, dipindahkan, diangkut atau dipadatkan). Dalam keadaan seperti ini,
+          butiran-butiran material yang dikandung masih terkonsolidasi dengan baik.
+          b. Keadaan gembur (loose)
+          Material yang telah digali dari tempat asalnya (kondisi asli), akan mengalami perubahan
+          volume, yaitu mengembang. Hal ini terjadi karena adanya penambahan rongga udara
+          diantara butiran-butiran material, dengan demikian volumenya menjadi lebih besar
+          sedangkan beratnya tetap.
+          c. Keadaan padat (compact)
+          Keadaan ini akan dialami oleh material yang mengalami proses pemadatan
+          (pemampatan), dimana volumenya menyusut. Dalam hal ini volume material akan lebih
+          kecil, sedangkan beratnya tetap.
+          Untuk menghitung suatu volume pekerjaan perhitungan volume material dibedakan atas:
+          • Volume keadaan asli atau Bank Cubic Meters (BCM).
+          • Volume keadaan gembur atau Loose Cubic Meters (LCM).
+          • Volume keadaan padat atau Compacted Cubic Meters (CCM).
+          1.4. Berat Material
+          Berat adalah suatu sifat yang dimiliki oleh setiap material, kemampuan suatu alat berat untuk
+          melakukan pekerjaan seperti mendorong, mengangkat, menarik, mengangkut dll, akan
+          dipengaruhi oleh berat material tersebut. Pada umumnya, setiap alat berat mempunyai batasan 
+          kapasitas, volume tertentu, sehingga pengertian berat material juga akan dipengaruhi oleh density 
+          material.
+          Contoh :
+          ▪ Wheel Loader akan jungkit pada waktu memuat biji besi, sedangkan untuk tanah biasa 
+          tidak.
+          ▪ Bulldozer kelas kecil tidak mampu mendorong stock pile batuan, sedangkan untuk 
+          tanah biasa dapat beroperasi dengan baik.
+          ▪ Dump Truck tidak mampu menanjak pada waktu mengangkut penuh batuan, sehingga
+          terpaksa volumenya harus dikurangi.
+          1.4. Bentuk Material
+          Bentuk material didasarkan pada ukuran butir material, yang akan mempengaruhi susunan
+          butir-butir material dalam suatu kesatuan volume atau tempat. Beberapa material yang mampu 
+          ditampung oleh suatu ruang/tempat, dapat dihitung dengan cara mengkoreksi jenis bentuk 
+          material yang menempati tersebut dengan suatu factor antara lain:
+          ▪ Blade factor untuk jenis alat yang memakai blade.
+          ▪ Bucket factor untuk jenis alat yang memakai bucket.
+          ▪ Payload factor untuk jenis alat pengangkut
+          1.5. Kohesivitas Material
+          Yang dimaksud dengan kohesivitas material adalah daya lekat atau kemampuan saling
+          mengikat diantara butir-butir material itu sendiri. Contoh: Tanah liat, volume material yang 
+          menempati ruangan ini bias melebihi volume ruangan. Pasir, material dengan kohesivitas yang 
+          kurang baik, apabila menempati suatu ruangan akan sukar menggunung atau cenderung 
+          peres/rata. 
+          1.6. Kekerasan Material
+          Material yang keras akan lebih sukar dikoyakan, digali, atau dikupas oleh alat berat. Material
+          yang umumnya tergolong keras adalah batu-batuan Batuan dalam pengertian pemindahan tanah 
+          terbagi dalam tiga batuan dasar, yaitu:
+          ▪ Batuan beku : sifatnya keras, padat, pejal dan kokoh
+          ▪ Batuan sedimen : merupakan pelapisan yang lunak sampai keras, ringan dan bersifat lepas
+          ▪ Batuan metamorf : umumnya perlapisannya keras, padat dan tidak teratur
+          Nilai kekerasan tanah diukur dengan menggunakan Ripper meter/Seismic Test meter. Besarnya 
+          nilai ditunjukan dalam satuan m/dt. (satuan Seismic Wave Velocity batuan).
+          1.8. Daya Dukung Tanah.
+          Kemampuan tanah untuk mendukung alat yang berada diatasnya, maka alat tersebut aka
+          memberikan “groun pressure”, sedangkan perlawanan yang diberikan tanah adalah “daya
+          dukung” Nilai daya dukung tanah dapat diketahui dengan cara pengukuran/test langsung 
+          dilapangan. Alat yang umum digunakan untuk test daya dukung tanah disebut “Cone 
+          Penetrometer”.
+          1.9. Jarak angkut.
+          Pemilihan alat-alat besar untuk transportasi sangat ditentukan oleh jarak angkut dan 
+          kondis jalan yang akan dilalui. Pengangkutan suatu material dengan dump truck, akan berbeda
+          pemilihannya dengan bulldozer, wheel loader atau motor scraper.
+          1.10. Hal-hal lain yang perlu diperhatikan
+          a. Iklim dan curah hujan.
+          Besarnya curah hujan dan hari hujan akan membatasi hari kerja pengoperasian alat-alat berat.
+          Jumlah hari kerja dan curah hujan perlu dicatat untuk mengetahui jumlah hari kerja yang benar￾benar tersedia didaerah tersebut. 
+          Tabel dibawah ini menunjukan jumlah hari yang hilang selama menunggu tanah menjadi
+          kering setelah hujan agar alat-alat berat dapat dioperasikan kembali.
+          Catatan :
+          ▪ Saluran pengering daerah baik
+          ▪ Nilai-nilai diatas dapat berubah sesuai dengan keadaan topografi.
+          b. Waktu penyelesaian.
+          Waktu penyelesaian pekerjaan atau target waktu yang ditetapkan untuk mengejakan suatu
+          proyek pemindahan tanah mekanis sangat dipengarihi oleh iklim/curah hujan. Karena dari data 
+          curah hujan dapat diketahui hari kerja yang effektif untuk operasi, biasanya dihitung dengan 
+          menggunakan kalkulasi sebagai berikut:
+          Jumlah hari kerja effektif = Jumlah/Total hari kalender dari target waktu yang tersedia –
+           Jumlah hari libur resmi/nasional – hari kerja yang hilang.
+          Keadaan 
+          Tanah
+          Curah Hujan 
+          (mm/hari)
+          Batu kerikil 
+          Batu tidak 
+          tersaring
+          Tanah Pasir Tanah 
+          Liat
+          Tanah 
+          Lempung
+           3 0 0 0 0 – 0,5 
+          3 - 10 0 0 1 – 1,5 1,5 - 2 
+          11- 30 0 - 0,5 0,5 - 1 1 ,5 - 2 2 - 3 
+          > 30 1 1,5 - 2 2 - 3 3 - 4 
+          Hari kerja yang hilang yaitu: tidak beroperasinya alat karena hujan, sehingga diperlukan waktu
+          untuk menunggu tanah menjadi kering kembali, agar alat dapat dioperasikan kembali. Hari kerja 
+          yang hilang tersebut, biasanya dimanfaatkan untuk mereparasi/memperbaiki alat-ala yang rusak.
+          Tabel dibawah ini menunjukan jam kerja yang optimal berdasarkan jumlah shift kerja serta
+          jumlah hari kerja yang tersedia dalam satu tahun.
+          Jumlah 
+          shift
+          Per Hari
+          Jam kerja per 
+          Hari (A)
+          Jam kerja 
+          Optimal
+          (B)
+          Faktor effisiensi
+          (B/A) x 100 %
+          1 8 5,5 – 6,5 75% 
+          2 16 10 – 11,5 70% 
+          3 24 13,5 – 15,5 60% 
+          d. Volume pekerjaan
+          Yaitu jumlah material yang harus dipindahkan, atau yang harus ditimbun, dihitung dalam m3
+          atau ton.
+          Target volume pekerjaan = Volume Pekerjaan Ton/jam atau m3/jam
+           Waktu Pekerjaan 
+          e. Persyaratan pekerjaan.
+          Misalnya daerah kerja terletak didekat pemukiman penduduk, maka untuk terapan alat-alat
+          berat diperlukan persyaratan-persyratan untuk keselamatan lingkungan.
+          f. Tenaga kerja lokal.
+          Dibutuhkan penyerapan tenaga menengah sampai kebawah, seperti pekerjaan:
+          Demi memperlancar kerja di lapangan dibutuhkan penyerapan tenaga kerja lokal sesuai dengan 
+          biadang dan kemampuannya utuk tenaga menengah kebawah. Seperti:
+          - Pembantu mekanik - Pembantu Foreman - Pembantu operator
+          - Tenaga administrasi - Office Boy, dll.
+        </p>
+
+        </div>
+        
+        <a href="#top"><button id="backtotop" type="button" style="position: fixed; bottom: 40%; right: 5%; width: auto; visibility: hidden;">Klik link kuning untuk kembali ke atas</button></a>
+
+    <script src="cariJawaban.js"></script>
 </body>
 </html>

@@ -47,6 +47,9 @@ const jawabanbulldozer = document.getElementById('jawabanbulldozer');
 const arraysBull = [LKbull, Pbull,FKbull, Jbull, Fbull, Rbull, Zbull, Volbull, Lbull, HSABbull, JABEbull, KPbull, JHKbull, BMPbull];
 
 
+
+
+
 //objekBulldozer
 let B = {
     LKbull : null,
@@ -170,6 +173,9 @@ hitungBull.addEventListener("click", function (){
 
 });
 
+
+
+
  function diketahui() {
     const diketahui = 
     `Diketahui: <br> 
@@ -250,12 +256,4 @@ hitungWheelloader.addEventListener('click', hitungWheelloaderCacl);
 
 //Bulldozer Callers
 clearbuttBull.addEventListener('click', hapusBull);
-
-
-
-
-
-
-
-
 
