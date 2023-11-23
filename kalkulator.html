@@ -88,6 +88,88 @@
             <p><i>Note : kalau masukkan koma jangan pakai koma tapi pakai titik ya.. emang agak lain javascript ini</i></p>
         
 
+            <div id="bulldozer">
+                <div id="tags">
+                    <a href="#wheelloader"><button type="button" class="btn btn-warning">Wheel loader</button></a>
+                    <a href="#bulldozer"><button type="button" class="btn btn-warning">Bulldozer</button></a>
+                </div>
+                <h3 class="title"><b>Bulldozer</b></h3>
+                <div id="inputbulldozer">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">LK</span>
+                        <input id="LKbull" value="2" type="text" class="form-control" placeholder="Lebar kerja x penetrasi" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">P</span>
+                        <input id="Pbull" value="0.3" type="text" class="form-control" placeholder="penetrasi" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">FK</span>
+                        <input id="FKbull" value="0.53"  type="text" class="form-control" placeholder="Faktor koreksi" value="0.53" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">J</span>
+                        <input id="JBull" value="820" type="text" class="form-control" placeholder="Jarak (dalam meter)" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">F</span>
+                        <input id="Fbull" value="2.48" type="text" class="form-control" placeholder="kecepatan maju (km/j) terkoreksi" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">R</span>
+                        <input id="Rbull" value="2.72" type="text" class="form-control" placeholder="kecepatan mundur (km/j) terkoreksi" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">Z</span>
+                        <input id="Zbull" type="text" class="form-control" disabled value="0.05" placeholder="waktu tetap transisi" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">Vol</span>
+                        <input id="Volbull" type="text" class="form-control" disabled placeholder="panjang atau jarak x lebar" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">L</span>
+                        <input id="Lbull" value="612" type="text" class="form-control"  placeholder="lebar" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">HSAB</span>
+                        <input id="HSABbull" value="1800000" type="text" class="form-control"  placeholder="harga sewa alat berat (/hari)" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">jumlah efektiv</span>
+                        <input id="JABEbull" value="3" type="text" class="form-control"  placeholder="masukkan bulan pengerjaan" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <br>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">KP</span>
+                        <input id="KPbull" type="text" disabled class="form-control" placeholder="Jawaban akan muncul disini" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">Jmlh Hri Krj</span>
+                        <input id="JHKbull" type="text" disabled class="form-control" placeholder=" lama pekerjaan" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">Biaya meng... proyek</span>
+                        <input id="BMPbull" type="text" disabled class="form-control" placeholder="HSAB x JHK" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    
+
+                    <button id="hitungBull" class="btn btn-info mt-4"  type="button">Hitung</button>
+                    <button id="clearbuttBull" class="btn btn-secondary mt-4"  type="button">Clear</button>
+
+
+        
+                </div>
+
+                <div >
+                    <p><b>Jalannya  : </b></p>
+                    <code id="jawabanbulldozer" >
+                        
+                    </code>
+                </div>
+            </div>
+
             <div id="wheelloader">
                 <div id="tags">
                     <a href="#wheelloader"><button type="button" class="btn btn-warning">Wheel loader</button></a>
@@ -172,87 +254,7 @@
                 </div>
                 
 
-                <div id="bulldozer">
-                    <div id="tags">
-                        <a href="#wheelloader"><button type="button" class="btn btn-warning">Wheel loader</button></a>
-                        <a href="#bulldozer"><button type="button" class="btn btn-warning">Bulldozer</button></a>
-                    </div>
-                    <h3 class="title"><b>Bulldozer</b></h3>
-                    <div id="inputbulldozer">
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">LK</span>
-                            <input id="LKbull" value="2" type="text" class="form-control" placeholder="Lebar kerja x penetrasi" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">P</span>
-                            <input id="Pbull" value="0.3" type="text" class="form-control" placeholder="penetrasi" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">FK</span>
-                            <input id="FKbull" value="0.53"  type="text" class="form-control" placeholder="Faktor koreksi" value="0.53" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">J</span>
-                            <input id="JBull" value="820" type="text" class="form-control" placeholder="Jarak (dalam meter)" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">F</span>
-                            <input id="Fbull" value="2.48" type="text" class="form-control" placeholder="kecepatan maju (km/j) terkoreksi" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">R</span>
-                            <input id="Rbull" value="2.72" type="text" class="form-control" placeholder="kecepatan mundur (km/j) terkoreksi" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">Z</span>
-                            <input id="Zbull" type="text" class="form-control" disabled value="0.05" placeholder="waktu tetap transisi" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">Vol</span>
-                            <input id="Volbull" type="text" class="form-control" disabled placeholder="panjang atau jarak x lebar" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">L</span>
-                            <input id="Lbull" value="612" type="text" class="form-control"  placeholder="lebar" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">HSAB</span>
-                            <input id="HSABbull" value="1800000" type="text" class="form-control"  placeholder="harga sewa alat berat (/hari)" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">jumlah efektiv</span>
-                            <input id="JABEbull" value="3" type="text" class="form-control"  placeholder="masukkan bulan pengerjaan" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <br>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">KP</span>
-                            <input id="KPbull" type="text" disabled class="form-control" placeholder="Jawaban akan muncul disini" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">Jmlh Hri Krj</span>
-                            <input id="JHKbull" type="text" disabled class="form-control" placeholder=" lama pekerjaan" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">Biaya meng... proyek</span>
-                            <input id="BMPbull" type="text" disabled class="form-control" placeholder="HSAB x JHK" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        
-
-                        <button id="hitungBull" class="btn btn-info mt-4"  type="button">Hitung</button>
-                        <button id="clearbuttBull" class="btn btn-secondary mt-4"  type="button">Clear</button>
-
-
-            
-                    </div>
-    
-                    <div >
-                        <p><b>Jalannya  : </b></p>
-                        <code id="jawabanbulldozer" >
-                            
-                        </code>
-                    </div>
-                </div>
+                
         </div>
 
             
