@@ -37,7 +37,7 @@ function handleUserInput() {
       addMessageToChat(botMessage, false);
     })
     .catch(error => {
-      console.error('Error:', error);
+      console.error('Error:', error); 
     });
 }
 
@@ -48,3 +48,4 @@ userInput.addEventListener('keydown', event => {
     handleUserInput();
   }
 });
+

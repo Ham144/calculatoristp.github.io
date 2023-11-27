@@ -20,6 +20,9 @@ const clearbuttWheel = document.getElementById('clearbuttWheel');
 const arraysWheel = [KB, J, Vol, Brt, F, R, HSAB];
 
 //Bulldozer
+ const KBbull = document.getElementById('KBbull');
+ const dorongBull = document.getElementById("Dorong");
+ const mundurBull = document.getElementById("Mundur");
  const LKbull = document.getElementById('LKbull');
  const Pbull = document.getElementById('Pbull');
  const FKbull = document.getElementById('FKbull');
@@ -44,7 +47,7 @@ const hitungBull = document.getElementById('hitungBull');
  const BMPbull = document.getElementById('BMPbull');
 const jawabanbulldozer = document.getElementById('jawabanbulldozer');
 //array bulldozer 
-const arraysBull = [LKbull, Pbull,FKbull, Jbull, Fbull, Rbull, Zbull, Volbull, Lbull, HSABbull, JABEbull, KPbull, JHKbull, BMPbull];
+const arraysBull = [KBbull, dorongBull, mundurBull, LKbull, Pbull,FKbull, Jbull, Fbull, Rbull, Zbull, Volbull, Lbull, HSABbull, JABEbull, KPbull, JHKbull, BMPbull];
 
 
 
@@ -52,6 +55,9 @@ const arraysBull = [LKbull, Pbull,FKbull, Jbull, Fbull, Rbull, Zbull, Volbull, L
 
 //objekBulldozer
 let B = {
+    KBbull : null,
+    dorongBull : null,
+    mundurBull : null,
     LKbull : null,
     Pbull : null,
     FKbull : null,
@@ -126,8 +132,8 @@ let hapusBull = function (){
     for (let i = 0; i < arraysBull.length; i++) {
         arraysBull[i].value = "";
     }
-    Z.value = 0.05;
-    FK.value = 0.53;
+    Zbull.value = 0.05;
+    FKbull.value = 0.53;
 }
 
 
@@ -143,13 +149,22 @@ hitungBull.addEventListener("click", function (){
 
     //Semua operasi Disini, hasilnya nya tinggal lempar ke fungsi yang membutuhkan untuk dijadikan string sesuai jalan & kebutuhan
     let LebarKerja = 2 * B.Pbull;
-    let Fterkoreksi = B.Fbull * 1000/60;
-    let Rterkoreksi = B.Rbull * 1000/60 ;
-    let atasKP = (LebarKerja * B.Pbull * 60 * B.FKbull);
-    let bawahKP =  B.Jbull / Fterkoreksi + B.Jbull / Rterkoreksi + B.Zbull;  
-    let temp1KP =   parseFloat(atasKP)/ parseFloat(bawahKP);
-    KPbull.value = temp1KP * B.Jbull;
-    B.Volbull = B.Jbull * B.Lbull;
+    let kubikasi = B.Jbull * B.Lbull * B.Pbull;//bcm
+    let lcm = kubikasi * 1.25;
+    let ccm = lcm / 1.35;
+    let Fterkoreksi = (B.Fbull * 1000/60).toFixed(2);
+    let Rterkoreksi = (B.Rbull * 1000/60 ).toFixed(2);
+    let dorongBullmenit = (B.dorongBull * 1000/60).toFixed(2);
+    let mundurBullmenit = (B.mundurBull * 1000/60).toFixed(2);
+    let atasKPdozing = (B.KBbull * 60 * B.FKbull).toFixed(2);
+    let bawahKPdozing =  parseFloat(((B.Jbull / dorongBullmenit + B.Jbull / mundurBullmenit)) + B.Zbull).toFixed(2);
+    
+    let temp1KPdozing =   (parseFloat(atasKPdozing)/ parseFloat(bawahKPdozing)).toFixed(2);
+    let atasKP = (LebarKerja * B.Pbull * 60 * B.FKbull).toFixed(2);
+    let bawahKP =  parseFloat(((B.Jbull / Fterkoreksi) + (B.Jbull / Rterkoreksi) + B.Zbull)).toFixed(2);  
+    let temp1KP =   (parseFloat(atasKP)/ parseFloat(bawahKP)).toFixed(2);
+    KPbull.value = (temp1KP * B.Jbull).toFixed(2);
+    B.Volbull = (B.Jbull * B.Lbull).toFixed(2);
     Volbull.value = B.Volbull;
     let tempjhk = B.Volbull / (temp1KP* B.Jbull)
     B.JHKbull = tempjhk / 8;
@@ -163,7 +178,11 @@ hitungBull.addEventListener("click", function (){
     
     jawabanbulldozer.innerHTML += diketahui(); 
 
-    jawabanbulldozer.innerHTML += KPbullCalc(LebarKerja, Fterkoreksi, Rterkoreksi, atasKP, bawahKP, temp1KP);
+    jawabanbulldozer.innerHTML += tigaSatuanVol(kubikasi, lcm, ccm);
+
+    jawabanbulldozer.innerHTML += KPrippingBullCalc(LebarKerja, Fterkoreksi, Rterkoreksi, atasKP, bawahKP, temp1KP);
+
+    jawabanbulldozer.innerHTML += KPdozingBullCalc( dorongBullmenit, mundurBullmenit, atasKPdozing, bawahKPdozing, temp1KPdozing);
 
     jawabanbulldozer.innerHTML += jumlahHariKerja(temp1KP, tempjhk); 
 
@@ -179,14 +198,19 @@ hitungBull.addEventListener("click", function (){
  function diketahui() {
     const diketahui = 
     `Diketahui: <br> 
-    Lebar kerja (LK) = ${B.LKbull} <br>
     Penetrasi (P) = ${B.Pbull}<br>
+    Jarak atau panjang (J) = ${B.Jbull}<br>
+    Lebar = ${B.Lbull}<br>
+    Kapasitas Blade (KB) = ${B.KBbull}<br>
+    Lebar kerja (LK) = ${B.LKbull} <br>
+    Kecepatan maju atau dorong = ${B.dorongBull}<br>
+    Kecepatan mundur = ${B.mundurBull}<br>
     Faktor koreksi (FK) = ${B.FKbull}<br>
-    Jarak (J) = ${B.Jbull}<br>
-    Maju terkoreksi (F) = ${B.FKbull}<br>
+    
+    Maju terkoreksi (F) = ${B.Fbull}<br>
     Mundur terkoreksi (R) = ${B.Rbull}<br>
     Z = ${B.Zbull}<br>
-    Lebar = ${B.Lbull}<br>
+    
     Harga sewa alat berat/perhari (HSAB) = ${B.HSABbull}<br>
     bulan penyelesaian = ${B.JABEbull} bulan`;
     
@@ -194,14 +218,26 @@ hitungBull.addEventListener("click", function (){
 
     return diketahui;
 }
+
+function tigaSatuanVol(kubikasi, lcm, ccm) {
+    const tigaSatuan = 
+    `<br><br>Kubikasi = P x L x T<br>
+    ${B.Jbull} x ${B.Lbull} x ${B.Pbull} <br>
+    Bcm = ${kubikasi}<br>
+    Lcm = ${kubikasi} x 1,25 = ${(lcm).toFixed(0)}<br>
+    Ccm = ${lcm} / 1,35 = ${(ccm.toFixed(0))}<br>
+    `
+
+    return tigaSatuan;
+}
 //mencari Kapasitas produksi bulldozer
-function KPbullCalc(LebarKerja, Fterkoreksi, Rterkoreksi, atasKP, bawahKP, temp1KP) {
+function KPrippingBullCalc(LebarKerja, Fterkoreksi, Rterkoreksi, atasKP, bawahKP, temp1KP) {
     
     const KP = 
-    `<br><br>1. MEncari KP<br> Lebar kerja (2 x P)  = 2 x ${B.Pbull} = ${LebarKerja}<br>
-    Fterkoreksi (Ft) (m/m) = F x 1000/60 => ${B.Fbull} x 1000/60 = ${Fterkoreksi}<br>
-    Rterkoreksi (Rt) (m/m)= R x 1000/60 => ${B.Rbull} x 1000/60 = ${Rterkoreksi}<br> 
-    KP = LK x P x 60 x FK <br>
+    `<br><br>1a. Mencari KP ripping<br> Lebar kerja (2 x P)  = 2 x ${B.Pbull} = ${LebarKerja}<br>
+    Fterkoreksi (Ft) (m/m) = F x 1000/60 => ${B.Fbull} x 1000/60 = ${(Fterkoreksi)}<br>
+    Rterkoreksi (Rt) (m/m)= R x 1000/60 => ${B.mundurBull} x 1000/60 = ${Rterkoreksi}<br> 
+    KP = LK x P x 60 x FK x J<br>
     '   '------------------<br>
     '   ' (J/Ft)+ (J/Rt) + Z <br>
     KP = ${LebarKerja} x ${B.Pbull} x 60 x ${B.FKbull} <br>
@@ -210,9 +246,32 @@ function KPbullCalc(LebarKerja, Fterkoreksi, Rterkoreksi, atasKP, bawahKP, temp1
     KP = ${atasKP} <br>
     '    '------------------<br>
     '    ' ${bawahKP} <br>
-    KP = ${atasKP} <br>
+    KP = ${temp1KP} <br>
     KP = ${temp1KP} x ${B.Jbull} <br>
     Kp = ${temp1KP * B.Jbull}
+    
+    `;
+    return KP;
+}
+
+function KPdozingBullCalc( dorongBullmenit, mundurBullmenit, atasKPdozing, bawahKPdozing, temp1KPdozing) {
+    
+    const KP = 
+    `<br><br>1b. Mencari KP dozing<br>
+    Maju (f) (m/m) = F x 1000/60 => ${B.dorongBull} x 1000/60 = ${dorongBullmenit}<br>
+    mundur (R) (m/m)= R x 1000/60 => ${B.mundurBull} x 1000/60 = ${mundurBullmenit}<br> 
+    KP = KB x 60 x FK <br>
+    '   '------------------<br>
+    '   ' (J/F)+ (J/R) + Z <br>
+    KP = ${B.KBbull} x  60 x ${B.FKbull} <br>
+    '      '-----------------------<br>
+    '    '${B.Jbull}/${dorongBullmenit} + ${B.Jbull}/${mundurBullmenit} + ${B.Zbull} <br>
+    KP = ${atasKPdozing} <br>
+    '    '------------------<br>
+    '    ' ${bawahKPdozing} <br>
+    KP = ${temp1KPdozing} <br>
+    KP = ${temp1KPdozing}  <br>
+    
     
     `;
     return KP;
